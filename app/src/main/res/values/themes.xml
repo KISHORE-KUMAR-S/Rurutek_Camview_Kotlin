@@ -1,0 +1,60 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Rurutekcamview" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Rurutekcamview" parent="Base.Theme.Rurutekcamview" />
+
+    <style name="ShapeAppearanceOverlay.BottomNav" parent="">
+        <item name="cornerSizeTopLeft">0dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="cameraViews" parent="Base.Theme.Rurutekcamview">
+        <item name="android:statusBarColor">@color/button</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay" parent="ShapeAppearanceOverlay.Material3.Button">
+        <item name="backgroundTint">@color/button</item>
+        <item name="boxStrokeColor">@color/button</item>
+        <item name="hintTextColor">@color/button</item>
+    </style>
+
+    <style name="loginTheme" parent="Base.Theme.Rurutekcamview">
+        <item name="android:src">@drawable/rurutek</item>
+    </style>
+
+    <style name="svVideoTheme" parent="Base.Theme.Rurutekcamview">
+        <item name="android:background">#d9d9d9</item>
+    </style>
+
+    <style name="listStyle" parent="Base.Theme.Rurutekcamview">
+        <item name="android:background">@color/button</item>
+
+    </style>
+
+    <style name="logoTheme" parent="Base.Theme.Rurutekcamview">
+        <item name="android:background">@drawable/rurutek_logo</item>
+    </style>
+
+    <style name="cardBackground" parent="Base.Theme.Rurutekcamview">
+        <item name="android:background">@color/cardbg</item>
+    </style>
+
+    <style name="liveCardBackground" parent="Base.Theme.Rurutekcamview">
+        <item name="android:backgroundTint">@color/cardbg</item>
+    </style>
+
+    <style name="gridBackground" parent="Base.Theme.Rurutekcamview">
+        <item name="android:background">@drawable/grid_grey</item>
+    </style>
+
+    <style name="progressBarTint" parent="Base.Theme.Rurutekcamview">
+        <item name="android:progressTint">@color/button</item>
+    </style>
+
+</resources>

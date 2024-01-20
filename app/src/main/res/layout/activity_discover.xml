@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/relativeLayout"
+    android:background="@color/white"
+    android:layout_above="@+id/bottom_nav"
+    tools:context=".DiscoverActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:id="@+id/toolbar"
+        android:background="@drawable/gradient"
+        android:layout_gravity="center|bottom">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/back_ios_icon"
+            android:background="@color/transparent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="45dp"
+            android:importantForAccessibility="no"/>
+
+        <TextView
+            android:id="@+id/live_camera"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="45dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:textSize="20sp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:text="@string/discover" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/controls"
+        android:layout_below="@+id/toolbar"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/available_devices"
+            android:id="@+id/availableDevices"
+            android:textColor="@color/black"
+            android:layout_marginStart="20dp"
+            android:layout_marginBottom="10dp"/>
+
+        <Space
+            android:layout_width="5dp"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgreyoverlay"
+            android:text="@string/open_bracket"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgreyoverlay"
+            android:id="@+id/totalDevices"
+            android:text="@string/zero"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/darkgreyoverlay"
+            android:text="@string/close_bracket"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/refresh"
+            android:textAlignment="textEnd"
+            android:textColor="@color/darkgreyoverlay"
+            android:id="@+id/refresh"
+            android:layout_marginEnd="20dp"/>
+
+    </LinearLayout>
+
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="@style/progressBarTint"
+        android:visibility="gone" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/controls"
+        android:textAlignment="textStart"
+        android:divider="@color/transparent"
+        android:scrollbarStyle="outsideOverlay"
+        android:dividerHeight="0dp"
+        android:listSelector="@color/transparent"
+        android:padding="5dp"/>
+
+</RelativeLayout>

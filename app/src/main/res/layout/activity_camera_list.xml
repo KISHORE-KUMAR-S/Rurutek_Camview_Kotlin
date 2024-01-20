@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/bottom_nav"
+    android:background="@color/white"
+    tools:context=".CameraListActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:id="@+id/toolbar"
+        android:background="@drawable/gradient"
+        android:layout_gravity="center|bottom">
+
+        <ImageButton
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:src="@drawable/back_ios_icon"
+            android:background="@color/transparent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="45dp">
+        </ImageButton>
+
+        <TextView
+            android:id="@+id/savedDevices"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginTop="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:gravity="center_vertical"
+            android:text="Saved Devices" />
+
+    </com.google.android.material.appbar.MaterialToolbar>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/no_camera_message_TV"
+        android:layout_below="@id/toolbar"
+        android:text="Your camera list is currently empty"
+        android:textSize="10dp"
+        android:visibility="gone"
+        android:layout_centerInParent="true">
+    </TextView>
+
+    <TextView
+        android:id="@+id/devicesSavedTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:textColor="@color/darkgreyoverlay"
+        android:text="Devices Saved: 0" />
+
+    <ExpandableListView
+        android:id="@+id/expandableListView"
+        android:layout_below="@id/devicesSavedTV"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:listSelector="@color/transparent"
+        android:divider="@null"
+        android:groupIndicator="@null"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

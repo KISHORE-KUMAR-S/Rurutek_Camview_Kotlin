@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="@string/add_cam"
+        android:id="@+id/add_cam"
+        android:icon="@drawable/add_camera_icon" />
+    <item
+        android:title="@string/list"
+        android:id="@+id/list"
+        android:icon="@drawable/list_icon" />
+    <item
+        android:title="@string/settings"
+        android:id="@+id/settings"
+        android:icon="@drawable/settings_icon" />
+</menu>
