@@ -6,10 +6,12 @@ import android.os.Build
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageButton
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 class AboutActivity : AppCompatActivity() {
+    @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
@@ -20,26 +22,15 @@ class AboutActivity : AppCompatActivity() {
         back.setOnClickListener { finish() }
     }
 
+    @SuppressLint("ObsoleteSdkInt")
     private fun setStatusBarTextColor() {
-        setSystemUiVisibility()
-        setStatusBarColor()
-        setNavigationBarColor()
-    }
-
-    @SuppressLint("ObsoleteSdkInt")
-    private fun setSystemUiVisibility() {
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
-    }
-
-    @SuppressLint("ObsoleteSdkInt")
-    private fun setStatusBarColor() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
-            window.isStatusBarContrastEnforced = false
-            window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                window.isStatusBarContrastEnforced = false
+                window.statusBarColor = ContextCompat.getColor(this, R.color.transparent)
+            }
+            window.navigationBarColor = Color.TRANSPARENT
         }
-    }
-
-    private fun setNavigationBarColor() {
-        window.navigationBarColor = Color.TRANSPARENT
     }
 }

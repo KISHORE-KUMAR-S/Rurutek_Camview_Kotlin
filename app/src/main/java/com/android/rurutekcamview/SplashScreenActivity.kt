@@ -6,6 +6,7 @@ import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
+import android.os.Looper
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -22,14 +23,12 @@ class SplashScreenActivity : AppCompatActivity() {
         setStatusBarTextColor()
         setContentView(R.layout.activity_splash_screen)
 
-        Handler().postDelayed({
-            val intent = Intent(
-                this@SplashScreenActivity,
-                CheckingActivity::class.java
-            )
+        Handler(Looper.getMainLooper()).postDelayed({
+            val intent = Intent(this@SplashScreenActivity, CheckingActivity::class.java)
             startActivity(intent)
             finish()
         }, delay)
+
     }
 
     @SuppressLint("ObsoleteSdkInt")
